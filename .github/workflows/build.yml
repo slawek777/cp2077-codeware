@@ -1,4 +1,4 @@
-name: Build TweakXL 2.5
+name: Build Codeware 2.5
 
 on:
   workflow_dispatch:
@@ -25,13 +25,13 @@ jobs:
         with:
           xmake-version: latest
 
-      - name: Build TweakXL
+      - name: Build Codeware
         run: |
           xmake f -p windows -a x64 -m release -y
           xmake -y
 
-      - name: Upload TweakXL.dll
+      - name: Upload Codeware.dll
         uses: actions/upload-artifact@v4
         with:
-          name: TweakXL-Cyberpunk-2.5
-          path: build/**/TweakXL.dll
+          name: Codeware-Cyberpunk-2.5
+          path: build/**/Codeware.dll
